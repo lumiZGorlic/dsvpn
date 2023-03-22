@@ -1,0 +1,25 @@
+
+
+turns out dsvpn works if i use the following set up
+
+1) dsvpn server on local PC, on port 1959, machine behind a router,
+generated a ngrok URL using: 
+sudo /snap/bin/ngrok tcp 1959
+which gives sth like
+tcp://4.tcp.eu.ngrok.io:19065 -> localhost:1959
+
+2) dsvpn client on another PC connected to mobile data
+to start dsvpn client do
+sudo ./dsvpn client vpn.key [ngrok url] [ngrok port]
+so that would be for example
+sudo ./dsvpn client vpn.key 4.tcp.eu.ngrok.io 19065
+
+
+
+quiz - why not working if i do 'ngrok http 1959' ????
+quiz - i run 'curl ipinfo.io/ip' and it shows same external ip on client and server. why ?
+quiz - in scapy show that really everything goes out to server 
+quiz - other ways to implement vpn (e.g. ssh)
+
+
+
